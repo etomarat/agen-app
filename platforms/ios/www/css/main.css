@@ -1,0 +1,397 @@
+@charset "UTF-8";
+@font-face {
+  font-family: drina;
+  src: url("../fonts/BebasNeue Bold.otf") format("opentype"); }
+
+@font-face {
+  font-family: DINPro;
+  src: url("../fonts/DINPro-Bold.otf") format("opentype"); }
+
+@font-face {
+  font-family: museo_sans_cyrl500;
+  src: url("../fonts/MuseoSansCyrl-500.otf") format("opentype"); }
+
+@font-face {
+  font-family: museo_sans_cyrl300;
+  src: url("../fonts/MuseoSansCyrl-300.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'museo_sans_cyrl100';
+  src: url('../fonts/museosanscyrl-100-webfont.eot');
+  src: url('../fonts/museosanscyrl-100-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/museosanscyrl-100-webfont.woff') format('woff'), url('../fonts/museosanscyrl-100-webfont.ttf') format('truetype'), url('../fonts/museosanscyrl-100-webfont.svg#museo_sans_cyrl100') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'museo_sans_cyrl700';
+  src: url('../fonts/museosanscyrl-700-webfont.eot');
+  src: url('../fonts/museosanscyrl-700-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/museosanscyrl-700-webfont.woff') format('woff'), url('../fonts/museosanscyrl-700-webfont.ttf') format('truetype'), url('../fonts/museosanscyrl-700-webfont.svg#museo_sans_cyrl700') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'uni_sansheavy_caps';
+  src: url('../fonts/unisansheavycaps-webfont.eot');
+  src: url('../fonts/unisansheavycaps-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisansheavycaps-webfont.woff') format('woff'), url('../fonts/unisansheavycaps-webfont.ttf') format('truetype'), url('../fonts/unisansheavycaps-webfont.svg#uni_sansheavy_caps') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 3, /Users/morad/Projects/agen/www/css/main.scss */
+* {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* line 11, /Users/morad/Projects/agen/www/css/main.scss */
+input, textarea {
+  -webkit-user-select: auto !important;
+  -khtml-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important; }
+
+/* line 19, /Users/morad/Projects/agen/www/css/main.scss */
+.reload {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  right: 0;
+  z-index: 300; }
+
+/* line 28, /Users/morad/Projects/agen/www/css/main.scss */
+.frame {
+  width: 768px;
+  height: 1024px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(0.8) translateY(-300px);
+  transform: scale(0.8) translateY(-300px);
+  opacity: 0;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  z-index: -1; }
+  /* line 46, /Users/morad/Projects/agen/www/css/main.scss */
+  .frame .holder {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+  /* line 54, /Users/morad/Projects/agen/www/css/main.scss */
+  .frame.v-center .holder:before {
+    display: inline-block;
+    width: 0px;
+    height: 100%;
+    content: '';
+    vertical-align: middle;
+    margin-left: -5px; }
+  /* line 62, /Users/morad/Projects/agen/www/css/main.scss */
+  .frame.v-center .holder center {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%; }
+  /* line 69, /Users/morad/Projects/agen/www/css/main.scss */
+  .frame.active {
+    opacity: 1;
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    z-index: 10; }
+
+/* line 77, /Users/morad/Projects/agen/www/css/main.scss */
+.chose-city {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  z-index: 200; }
+  /* line 82, /Users/morad/Projects/agen/www/css/main.scss */
+  .chose-city img {
+    width: 111.5px; }
+
+/* line 87, /Users/morad/Projects/agen/www/css/main.scss */
+.header {
+  margin-top: 130px;
+  width: 100%;
+  text-align: center;
+  height: 264px;
+  background-size: cover; }
+  /* line 93, /Users/morad/Projects/agen/www/css/main.scss */
+  .header:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 0;
+    height: 100%;
+    margin-left: -3px; }
+
+/* line 104, /Users/morad/Projects/agen/www/css/main.scss */
+h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: drina;
+  font-size: 83px;
+  font-weight: normal;
+  color: white;
+  font-style: italic;
+  letter-spacing: 0.05em; }
+
+/* line 118, /Users/morad/Projects/agen/www/css/main.scss */
+#city-chose .header {
+  background-image: url('../img/bg-header-city.png'); }
+/* line 121, /Users/morad/Projects/agen/www/css/main.scss */
+#city-chose .select-wrapper {
+  margin-top: 170px; }
+
+/* line 126, /Users/morad/Projects/agen/www/css/main.scss */
+.select-wrapper {
+  position: relative;
+  background: #edeef2;
+  display: inline-block;
+  padding-left: 10px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 8px;
+  width: 416px;
+  box-sizing: border-box; }
+  /* line 136, /Users/morad/Projects/agen/www/css/main.scss */
+  .select-wrapper select {
+    border: none;
+    background: none;
+    font-family: 'museo_sans_cyrl500';
+    font-size: 22.5px;
+    color: #283751;
+    padding-left: 15px;
+    background: none;
+    width: 100%; }
+  /* line 146, /Users/morad/Projects/agen/www/css/main.scss */
+  .select-wrapper:after {
+    content: '▾';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #283751;
+    background: #edeef2;
+    width: 40px;
+    margin-top: 8px;
+    padding: 10px 0px;
+    pointer-events: none; }
+
+/* line 161, /Users/morad/Projects/agen/www/css/main.scss */
+button {
+  font-family: 'DINPro';
+  font-size: 25.5px;
+  font-weight: bold;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  border: 3px solid;
+  padding: 0 50px;
+  line-height: 240%;
+  text-transform: uppercase;
+  margin-top: 50px; }
+  /* line 173, /Users/morad/Projects/agen/www/css/main.scss */
+  button.green {
+    color: #1c9f26; }
+  /* line 176, /Users/morad/Projects/agen/www/css/main.scss */
+  button.red {
+    color: #ba262c; }
+  /* line 179, /Users/morad/Projects/agen/www/css/main.scss */
+  button.darkblue {
+    color: #262f5e; }
+  /* line 182, /Users/morad/Projects/agen/www/css/main.scss */
+  button.vk {
+    border: none;
+    padding: 0; }
+    /* line 185, /Users/morad/Projects/agen/www/css/main.scss */
+    button.vk img {
+      width: 320px; }
+  /* line 189, /Users/morad/Projects/agen/www/css/main.scss */
+  button[disabled] {
+    opacity: 0.5; }
+
+/* line 194, /Users/morad/Projects/agen/www/css/main.scss */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 200; }
+  /* line 199, /Users/morad/Projects/agen/www/css/main.scss */
+  .footer .logo2 {
+    width: 101px;
+    position: absolute;
+    bottom: 20px;
+    left: 25px; }
+  /* line 205, /Users/morad/Projects/agen/www/css/main.scss */
+  .footer .type {
+    font-family: museo_sans_cyrl300;
+    position: absolute;
+    bottom: 25px;
+    right: 25px; }
+
+/* line 214, /Users/morad/Projects/agen/www/css/main.scss */
+#id-email .header {
+  height: 170px;
+  background-position: center center; }
+
+/* line 221, /Users/morad/Projects/agen/www/css/main.scss */
+#id-vk .header, #id-email .header, #id-email-2 .header {
+  background-image: url('../img/bg-header-vk.png'); }
+/* line 224, /Users/morad/Projects/agen/www/css/main.scss */
+#id-vk h2, #id-email h2, #id-email-2 h2 {
+  font-family: museo_sans_cyrl500;
+  font-size: 22.5px;
+  color: #283751;
+  font-weight: normal;
+  margin-bottom: 35px; }
+/* line 231, /Users/morad/Projects/agen/www/css/main.scss */
+#id-vk .form-vk, #id-email .form-vk, #id-email-2 .form-vk {
+  width: 414px;
+  text-align: left; }
+  /* line 237, /Users/morad/Projects/agen/www/css/main.scss */
+  #id-vk .form-vk label, #id-email .form-vk label, #id-email-2 .form-vk label {
+    display: block;
+    margin-bottom: 15px; }
+    /* line 240, /Users/morad/Projects/agen/www/css/main.scss */
+    #id-vk .form-vk label .label, #id-email .form-vk label .label, #id-email-2 .form-vk label .label {
+      display: block;
+      font-family: museo_sans_cyrl300;
+      font-size: 17px;
+      color: #424d64;
+      margin-bottom: 5px; }
+    /* line 247, /Users/morad/Projects/agen/www/css/main.scss */
+    #id-vk .form-vk label input, #id-email .form-vk label input, #id-email-2 .form-vk label input {
+      width: 100%;
+      background: #edeef2;
+      border: none;
+      padding: 12px 10px;
+      font-family: museo_sans_cyrl300;
+      border-radius: 8px;
+      box-sizing: border-box; }
+    /* line 256, /Users/morad/Projects/agen/www/css/main.scss */
+    #id-vk .form-vk label textarea, #id-email .form-vk label textarea, #id-email-2 .form-vk label textarea {
+      width: 100%;
+      background: #edeef2;
+      border: none;
+      padding: 12px 10px;
+      font-family: museo_sans_cyrl300;
+      border-radius: 8px;
+      box-sizing: border-box;
+      height: 100px; }
+
+/* line 271, /Users/morad/Projects/agen/www/css/main.scss */
+#id-email .header {
+  background-image: url(../img/bg-header-red.png); }
+
+/* line 276, /Users/morad/Projects/agen/www/css/main.scss */
+a {
+  font-family: museo_sans_cyrl300;
+  font-size: 15px;
+  color: #17243b;
+  opacity: 0.8; }
+
+/* line 283, /Users/morad/Projects/agen/www/css/main.scss */
+.ast {
+  color: #bc1e00; }
+
+/* line 287, /Users/morad/Projects/agen/www/css/main.scss */
+.disclaimer {
+  font-family: museo_sans_cyrl300;
+  color: #17243b;
+  opacity: 0.8;
+  margin-top: 50px; }
+
+/* line 295, /Users/morad/Projects/agen/www/css/main.scss */
+#id-email-2 .form-vk {
+  margin-top: 80px; }
+
+/* line 300, /Users/morad/Projects/agen/www/css/main.scss */
+input[type="checkbox"] + .label {
+  display: inline-block !important;
+  width: 94%;
+  font-family: museo_sans_cyrl300;
+  font-size: 12px !important;
+  color: #17243b !important;
+  opacity: 0.8 !important;
+  margin-top: 10px; }
+
+/* line 310, /Users/morad/Projects/agen/www/css/main.scss */
+input[type="checkbox"] {
+  width: auto !important;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  bottom: -5px; }
+
+/* line 318, /Users/morad/Projects/agen/www/css/main.scss */
+#question, #are-you-ready, #end {
+  background-color: #edb300; }
+  /* line 320, /Users/morad/Projects/agen/www/css/main.scss */
+  #question .header, #are-you-ready .header, #end .header {
+    background-image: url('../img/bg-question.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    /* line 326, /Users/morad/Projects/agen/www/css/main.scss */
+    #question .header h1, #are-you-ready .header h1, #end .header h1 {
+      color: #262f5e;
+      font-size: 67.5px; }
+
+/* line 333, /Users/morad/Projects/agen/www/css/main.scss */
+h2 {
+  font-size: 26px;
+  font-family: museo_sans_cyrl300;
+  color: #262f5e;
+  font-weight: normal; }
+
+/* line 340, /Users/morad/Projects/agen/www/css/main.scss */
+h3 {
+  font-family: museo_sans_cyrl500;
+  font-size: 33.5px;
+  color: #262f5e;
+  font-weight: normal; }
+
+/* line 348, /Users/morad/Projects/agen/www/css/main.scss */
+#question .header {
+  margin-top: 250px; }
+
+/* line 353, /Users/morad/Projects/agen/www/css/main.scss */
+#pre-video {
+  background: url('../img/bg-screen.jpg') center;
+  background-size: cover; }
+  /* line 356, /Users/morad/Projects/agen/www/css/main.scss */
+  #pre-video .holder {
+    background: rgba(28, 159, 38, 0.6); }
+
+/* line 361, /Users/morad/Projects/agen/www/css/main.scss */
+video {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover; }
+
+/* line 370, /Users/morad/Projects/agen/www/css/main.scss */
+#are-you-ready .holder .header, #end .holder .header {
+  margin-top: 300px; }
+
+/* line 377, /Users/morad/Projects/agen/www/css/main.scss */
+.frame#rules .wrapper {
+  position: relative;
+  overflow: scroll;
+  box-sizing: border-box;
+  height: 794px;
+  top: 90px; }
+/* line 384, /Users/morad/Projects/agen/www/css/main.scss */
+.frame#rules .holder {
+  padding: 0 100px;
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=main.css.map */
